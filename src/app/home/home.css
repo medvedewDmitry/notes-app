@@ -1,0 +1,27 @@
+.home-page__create {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+.home-page__title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 36px;
+}
+
+.main-content {
+  padding: 10px 20px;
+  display: flex;
+  flex-direction: column;
+  row-gap: 20px;
+  width: 100%;
+}
+.main-content__notes-list {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=home.css.map */

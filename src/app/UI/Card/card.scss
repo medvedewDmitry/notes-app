@@ -1,0 +1,60 @@
+@mixin cardInput {
+  & .MuiOutlinedInput-root {
+    & fieldset {
+      border-color: transparent;
+      outline: transparent;
+    }
+
+    &:hover fieldset {
+      border-color: transparent;
+      outline: transparent;
+    }
+
+    .Mui-focused {
+      border-color: transparent;
+      outline: transparent;
+    }
+    & .Mui-focused fieldset {
+      border-color: transparent;
+      outline: transparent;
+    }
+  }
+}
+
+.card {
+  @apply border border-gray-400;
+  padding: 10px;
+  border-radius: 8px;
+  color: #0a0a0a;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+
+  &.--create {
+    width: 30%;
+  }
+
+  &:hover {
+    @apply shadow-xl;
+  }
+
+  &__title {
+    @include cardInput;
+    width: 100%;
+    font-size: 24px;
+  }
+
+  &__desc {
+    @include cardInput;
+    font-size: 18px;
+    width: 100%;
+    flex: 1;
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: space-between;
+    column-gap: 10px;
+  }
+}

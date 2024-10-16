@@ -1,0 +1,7 @@
+.notes-list__cards {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+/*# sourceMappingURL=notes-list.css.map */

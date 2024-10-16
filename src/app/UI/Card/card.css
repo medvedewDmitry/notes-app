@@ -1,0 +1,64 @@
+.card {
+  @apply border border-gray-400;
+  padding: 10px;
+  border-radius: 8px;
+  color: #0a0a0a;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  row-gap: 10px;
+}
+.card.--create {
+  width: 30%;
+}
+.card:hover {
+  @apply shadow-xl;
+}
+.card__title {
+  width: 100%;
+  font-size: 24px;
+}
+.card__title .MuiOutlinedInput-root fieldset {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__title .MuiOutlinedInput-root:hover fieldset {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__title .MuiOutlinedInput-root .Mui-focused {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__title .MuiOutlinedInput-root .Mui-focused fieldset {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__desc {
+  font-size: 18px;
+  width: 100%;
+  flex: 1;
+}
+.card__desc .MuiOutlinedInput-root fieldset {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__desc .MuiOutlinedInput-root:hover fieldset {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__desc .MuiOutlinedInput-root .Mui-focused {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__desc .MuiOutlinedInput-root .Mui-focused fieldset {
+  border-color: transparent;
+  outline: transparent;
+}
+.card__footer {
+  display: flex;
+  justify-content: space-between;
+  column-gap: 10px;
+}
+
+/*# sourceMappingURL=card.css.map */

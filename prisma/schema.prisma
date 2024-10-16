@@ -1,0 +1,48 @@
+// This is your Prisma schema file,
+// learn more about it in the docs: https://pris.ly/d/prisma-schema
+
+// Looking for ways to speed up your queries, or scale easily with your serverless or edge functions?
+// Try Prisma Accelerate: https://pris.ly/cli/accelerate-init
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "sqlite"
+  url      = env("DATABASE_URL")
+}
+
+model User {
+  id         Int        @id @default(autoincrement())
+  username   String
+  avatar_url String?
+  email      String     @unique
+  password   String
+  notes      Note[]
+  reminders  Reminder[]
+}
+
+model Note {
+  id           Int      @id @default(autoincrement())
+  title        String
+  desc         String
+  author_id    Int
+  is_archived  Boolean
+  author       User     @relation(fields: [author_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  time_created DateTime @default(now())
+
+  @@unique([id, author_id])
+}
+
+model Reminder {
+  id           Int      @id
+  title        String
+  desc         String
+  author_id    Int
+  author       User     @relation(fields: [author_id], references: [id], onUpdate: Cascade, onDelete: Cascade)
+  time_created DateTime @default(now())
+  time_remind  DateTime
+
+  @@unique([id, author_id])
+}

@@ -1,0 +1,35 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+/* Светлая тема */
+:root {
+  --background: #ffffff;
+  --foreground: #171717;
+  --beige:#f1f3f4;
+}
+
+
+html {
+  min-width: 320px;
+}
+
+body {
+  color: var(--foreground);
+  background: var(--background);
+  font-family: Roboto, Arial, Helvetica, sans-serif;
+}
+.heading {
+  display: flex;
+  column-gap: 10px;
+  align-items: center;
+}
+.heading__icon {
+  font-size: 26px;
+}
+
+
+@layer utilities {
+  .text-balance {
+    text-wrap: balance;
+  }
+}
