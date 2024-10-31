@@ -1,10 +1,10 @@
 import React from 'react';
-import Heading1 from "@/app/UI/Heading1";
+import Heading from "@/app/UI/Heading";
 
 const Page = () => {
     return (
         <main>
-            <Heading1>Напоминания</Heading1>
+            <Heading type="h1">Напоминания</Heading>
         </main>
     );
 };

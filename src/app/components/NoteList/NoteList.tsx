@@ -2,7 +2,7 @@
 import React from 'react';
 import notesStore from "@/store/notesStore/notesStore";
 import {Note} from "@/types";
-import Card from "@/app/UI/Card/Card";
+import Card from "@/app/components/Card/Card";
 import {observer} from "mobx-react-lite";
 import './notes-list.scss'
 import {NoteListProps} from "@/app/interfaces";

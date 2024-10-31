@@ -1,14 +1,14 @@
 'use client'
 
 import './home.scss'
-import Card from "@/app/UI/Card/Card";
+import Card from "@/app/components/Card/Card";
 import notesStore from "@/store/notesStore/notesStore";
 import React, {useEffect, useState} from "react";
 import {observer} from "mobx-react-lite";
 import NoteList from "@/app/components/NoteList/NoteList";
 import Header from "@/app/components/Header/Header";
 import {CgNotes} from "react-icons/cg";
-import Heading3 from "@/app/UI/Heading3";
+import Heading from "@/app/UI/Heading";
 
 const Home = observer(() => {
     const [tab, setTab] = useState('main')
@@ -39,7 +39,7 @@ const Home = observer(() => {
                         <div className="heading__icon">
                             <CgNotes/>
                         </div>
-                        <Heading3>{tab === 'main' ? 'Основные' : 'Архивные'}</Heading3>
+                        <Heading type="h3">{tab === 'main' ? 'Основные' : 'Архивные'}</Heading>
                     </div>
                     <NoteList
                         isArchived={tab !== 'main'}

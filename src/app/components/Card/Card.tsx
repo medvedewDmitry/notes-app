@@ -4,18 +4,16 @@ import {useEffect, useState} from "react";
 import {Note} from "@/types";
 import Button from '@mui/material/Button';
 import {TextField} from "@mui/material";
-import {CardProps} from "@/app/interfaces";
-
-export default function Card(
-    {
-        note,
-        withDelete = true,
-        withArchive = true,
-        onSave,
-        onDelete,
-        onArchive,
-        classNameProp
-    }: CardProps) {
+interface CardProps {
+    note?: Note;
+    withDelete?: boolean;
+    withArchive?: boolean;
+    classNameProp?: string;
+    onSave?: (note: Note) => void;
+    onArchive?: (note: Note) => void;
+    onDelete?: (note_id: number) => void;
+}
+export default function Card({withDelete = true, withArchive = true, ...props}: CardProps) {
     const [noteCard, setNoteCard] = useState({
         id: 0,
         title: '',
@@ -26,13 +24,13 @@ export default function Card(
     })
 
     useEffect(() => {
-        if (note) {
-            setNoteCard(note)
+        if (props.note) {
+            setNoteCard(props.note)
         }
-    }, [note]);
+    }, [props.note]);
     const handleSave = () => {
-        if (onSave) {
-            onSave(noteCard);
+        if (props.onSave) {
+            props.onSave(noteCard);
         }
         setNoteCard({
             id: 0,
@@ -44,18 +42,18 @@ export default function Card(
         })
     }
     const handleDelete = () => {
-        if (onDelete && note) {
-            onDelete(note.id)
+        if (props.onDelete && props.note) {
+            props.onDelete(props.note.id)
         }
     }
     const handleArchive = () => {
-        if (onArchive) {
-            onArchive({...noteCard, is_archived: !noteCard.is_archived})
+        if (props.onArchive) {
+            props.onArchive({...noteCard, is_archived: !noteCard.is_archived})
         }
     }
 
     return (
-        <div className={`card ${classNameProp}`}>
+        <div className={`card ${props.classNameProp ?? ''}`}>
             <div className="card__title">
                 <TextField
                     fullWidth
